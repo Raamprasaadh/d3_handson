@@ -1,23 +1,25 @@
-import logo from './logo.svg';
-import './App.css';
+import * as d3 from "d3";
+import { useEffect } from "react";
+import "./App.css";
 
 function App() {
+  useEffect(() => {
+    let dataSet = [
+      { subject: "Dogs", count: 150 },
+      { subject: "Cats", count: 75 },
+      { subject: "Fish", count: 130 },
+      { subject: "Bunnies", count: 185 },
+    ];
+    d3.select("#pgraph")
+      .selectAll("p")
+      .data(dataSet)
+      .enter()
+      .append("p")
+      .text((dt) => dt.subject + " " + dt.count);
+  }, []);
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <div id="pgraph"></div>
     </div>
   );
 }
