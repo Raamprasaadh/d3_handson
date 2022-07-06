@@ -9,6 +9,20 @@
   justify-items: center;
   margin: 50px;
 }
+#barChart1{
+  display:flex;
+  flex-direction: row;
+  align-items: flex-end;
+  justify-items:center;
+  margin:50px;
+}
+#barChart2{
+  display:flex;
+  flex-direction:row;
+  align-items: flex-end;
+  justify-items: center;
+  margin: 50px;
+}
 .bar{
   background-color: blue;
   width:10px;
